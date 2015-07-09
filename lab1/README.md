@@ -1,5 +1,7 @@
 # Lab 1: removing data without being caught
 
+Python library required: [PyCrypto](https://www.dlitz.net/software/pycrypto/)
+
 The Oracle lab1_oracle.pyc reads the content of an encrypted file users1.db and displays the access for some users.
 
 You are told that the encryption used is pretty strong: it is using AES 128-bit in CBC mode for encryption and HMAC for integrity. Indeed, try to delete or replace one character and the Oracle will detect some issue.

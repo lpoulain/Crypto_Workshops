@@ -1,8 +1,13 @@
 # Crypto Workshops - How to get around encryption
 
-This series of labs show how to GET AROUND (not break, get around) popular encryption algorithms used every day when they are not properly implemented. The goal is to show how just using encryption is not enough, and to dispel some misconceptions. If strong cryptography is often a requirement for security, it is NOT enough.
+The goal of these workshops is to show how strong, popular encryption algorithms can be thwarted (not broken, thwarted) when not properly implemented. If strong encryption is often necessary for a secure system, it is *never* enough. The labs will get a crack at:
 
-THESE WORKSHOPS DO NOT REQUIRE MUCH KNOWLEDGE OF CRYPTOGRAPHY. You need to know what is symmetric encryption, asymmetric encryption, XOR'ing and a MAC.
+- AES in CBC mode, a popular encryption scheme often used in HTTPS connections
+- Public key encryption
+- Badly implemented integrity mechanism
+- SQLCipher, an encryption library used on top of SQLite
+
+THESE WORKSHOPS DO NOT REQUIRE MUCH KNOWLEDGE OF CRYPTOGRAPHY. You only need to know what is [symmetric encryption](https://en.wikipedia.org/wiki/Symmetric-key_algorithm) (i.e. private key encryption), [asymmetric encryption](https://en.wikipedia.org/wiki/Public-key_cryptography) (i.e. public key encryption), [XOR'ing](https://en.wikipedia.org/wiki/Exclusive_or) and a [MAC](https://en.wikipedia.org/wiki/Message_authentication_code) (Message Authentication Code)
 
 
 ### Misconception #1: data encrypted using a strong encryption algorithm is secure
@@ -20,14 +25,14 @@ But what if Bob sends again this same message to your bank 10 times? Unless a pr
 
 When we think about cracking encryption, we're generally thinking retrieving the full plaintext. Like in spy movies. This is not always the case.
 
-Sometimes an attacker may only need to know a few characters, or even finds patterns in the ciphertext. Proper cryptography is not suppsoed to leak *any* information.
+Sometimes an attacker may only need to know a few characters, or even finds patterns in the ciphertext. Proper cryptography is not suppsoed to leak *any* information. Just forgotting to add randomization means that the same plaintext will always produce the same ciphertext. This alone can be a dead giveway.
 
 Also, cryptography doesn't also mean just protecting confidentiality. It also means protecting integrity. That is, making sure the ciphertext was not tampered with. Even without being able to decrypt the ciphertext, an attacker may be able to modify the ciphertext so that the plaintext will be modified in a certain way.
 
 ### [Lab 1 - Removing data without being caught](lab1/)
 ### [Lab 2 - Public key encryption of small plaintext is NOT secure](lab2/)
 ### [Lab 3 - Breaking the integrity of AES in CBC mode](lab3/)
-### [Lab 4 - Breaking the integrity of sqlcipher](lab4/)
+### [Lab 4 - Breaking the integrity of SQLCipher](lab4/)
 
 
 ### Requirements
