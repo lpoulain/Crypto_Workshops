@@ -6,4 +6,4 @@ You are told that the encryption used is pretty strong: it is using AES 128-bit 
 
 But if you examine the ciphertext, you will find that even with a strong encryption used, some patterns can emerge. One weakness is that the encryption does not use any randomness, which leaks some information. But there are other weaknesses as well.
 
-Your goal is to remove the "None" access for the user "gworkman" (and only this access) without the Oracle detecting any tampering.
+Your goal is to remove the "None" access for the user "alice" (and only this access) without the Oracle detecting any tampering.

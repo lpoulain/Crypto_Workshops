@@ -4,7 +4,7 @@ One of the recommentations of the [OWASP top 10 most critical web application se
 
 If asymmetric encryption (i.e. with a public and a private key scheme) is a great encryption scheme, it is NOT a safe scheme for encrypting small amounts of data.
 
-### The lab
+## The lab
 
 The lab contains a sqlite database users2.db which contains a list of users and a 5-digit PIN number encrypted using a 2048-bit asymmetric key scheme. You are provided with the public key.
 
@@ -16,7 +16,7 @@ If brute-forcing the private key is unfeasible, you can easily brute-force the P
 
 Implement the three types of algorithms to pass this lab:
 
-1. Encrypt all 10,000 PIN possibilities and store the (ciphertext -> plaintext) results in a dictionary. You can then quickly decrypt each user's PIN by performing a dictionary lookup. This is the fastest method when you have several users.
+1. Use the [PyCrypto library](https://www.dlitz.net/software/pycrypto/api/current/) to encrypt all 10,000 PIN possibilities and store the (ciphertext -> plaintext) results in a dictionary. You can then quickly decrypt each user's PIN by performing a dictionary lookup. This is the fastest method when you have several users.
 2. Brute-force each record independantly. This is slower but works even if the encrypted data is salted(*) - as long as you know how the salt is applied
 3. Brute-force the first record, determine the value for pin_plain and then copy the pin_cipher and pin_plain to all the other records. Some might consider this as cheating, but this method might work in some circumstances.
 

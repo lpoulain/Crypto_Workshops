@@ -1,13 +1,13 @@
 # Crypto Workshops - How to get around encryption
 
-This series of labs show how to GET AROUND (not break, get around) popular encryption algorithms used every day. The goal is to show how just encrypting is not enough, and to dispel some misconceptions. If strong cryptography is often a requirement for security, it is NOT enough.
+This series of labs show how to GET AROUND (not break, get around) popular encryption algorithms used every day when they are not properly implemented. The goal is to show how just using encryption is not enough, and to dispel some misconceptions. If strong cryptography is often a requirement for security, it is NOT enough.
 
 THESE WORKSHOPS DO NOT REQUIRE MUCH KNOWLEDGE OF CRYPTOGRAPHY. You need to know what is symmetric encryption, asymmetric encryption, XOR'ing and a MAC.
 
 
 ### Misconception #1: data encrypted using a strong encryption algorithm is secure
 
-The main misconception about cryptography is that, as long as something is encrypted using a known, secure algorithm, it is secure.
+The main misconception about cryptography is that, as long as something is encrypted using a known, strong algorithm, it is secure.
 
 In practice, an attacker does not always need to be able to decrypt a ciphertext to be able to do some damage.
 
@@ -22,17 +22,19 @@ When we think about cracking encryption, we're generally thinking retrieving the
 
 Sometimes an attacker may only need to know a few characters, or even finds patterns in the ciphertext. Proper cryptography is not suppsoed to leak *any* information.
 
-Also, cryptography doesn't also mean protecting confidentiality. It also means protecting integrity. That is, making sure the ciphertext was not tampered with. Even without being able to decrypt the ciphertext, an attacker may be able to modify the ciphertext so that the plaintext will be modified in a certain way.
+Also, cryptography doesn't also mean just protecting confidentiality. It also means protecting integrity. That is, making sure the ciphertext was not tampered with. Even without being able to decrypt the ciphertext, an attacker may be able to modify the ciphertext so that the plaintext will be modified in a certain way.
 
-### [Lab 1 - Removing data without being caught](lab1/README.md)
-### [Lab 2 - Public key encryption of small plaintext is NOT secure](lab2/README.md)
-### [Lab 3 - Breaking the integrity of AES in CBC mode](lab3/README.md)
-### [Lab 4 - Breaking the integrity of sqlcipher](lab4/README.md)
+### [Lab 1 - Removing data without being caught](lab1/)
+### [Lab 2 - Public key encryption of small plaintext is NOT secure](lab2/)
+### [Lab 3 - Breaking the integrity of AES in CBC mode](lab3/)
+### [Lab 4 - Breaking the integrity of sqlcipher](lab4/)
 
 
 ### Requirements
 
-These labs are made using Python 2.7 with the PyCrypto library. Python is indeed a great language to manipulate text strings and binary data.
+These labs were written using Python 2.7 with the [PyCrypto](https://www.dlitz.net/software/pycrypto/) library. Python is indeed a great language to manipulate text strings and binary data.
+
+All labs are provided with a user database to crack and an Oracle that will display the content of the database as well as a message if you have successfully modified it (e.g. run `python lab1_oracle.pyc user1.db`)
 
 
 ### No cheating!

@@ -22,14 +22,14 @@ CBC is working as is:
 - The plaintext is split in 16-bytes plaintext blocks pb<sub>1</sub>, pb<sub>2</sub>, ...,  pb<sub>n</sub>. They will eventually be encrypted in cipherblocks cb<sub>1</sub>, cb<sub>2</sub>, ...,  cb<sub>n</sub>
 - The last block is padded to make 16 bytes
 - You come up with a randomly generated 16-bytes initialization vector (IV) which will be considered the first cipher block cb<sub>0</sub>
-- Each cipherblock is computed as is: cb<sub>n</sub> = AES(pb<sup>n</sub> XOR cb<sub>n-1</sub>)
+- Each cipherblock is computed as is: cb<sub>n</sub> = AES(pb<sub>n</sub> XOR cb<sub>n-1</sub>)
 - The final ciphertext will be cb<sub>0</sub>, cb<sub>1</sub>, cb<sub>2</sub>, ...,  cb<sub>n</sub>
 
 See [Wikipedia](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_.28CBC.29) for further details.
 
 ### The lab
 
-Like for Lab 1, the goal is to remove the "None" access for user "alice" when running the Oracle. In particular, the other permissions for alice should remain intact.
+Like for Lab 1, the goal is to remove the "None" access for user "alice" when running the Oracle. The other permissions for alice should remain intact.
 
 **How to compromise the integrity**
 
@@ -61,6 +61,6 @@ Can you find a way to modify the ciphertext while keeping enough integrity so th
 
 The Oracle is using SHA256 to prevent any tampering with the ciphertext.
 
-How to get around that? Take a good look at how SHA256 works.
+How to get around that? Check the [PyCrypto documentation](https://www.dlitz.net/software/pycrypto/api/current/) and take a good look at how SHA256 works.
 
 To help you determine where is the SHA256 signature stored, there are two versions of the ciphertext. Comparing the two in hex (on Mac or Linux, use the command hexdump) should help.
