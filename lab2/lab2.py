@@ -13,8 +13,14 @@ l95villx0KwL6Cdqj5gpC4KeQP+KuwdHaMarya3x0M3ryM5acSe0M2NxpJAWDu1U
 7QIDAQAB
 -----END PUBLIC KEY-----"""
 
-# This function is. It is not really needed in this particular case
-
+# This function is creating all possible permutations of the characters
+# in 'chars' to generate a string of length 'length'. Note that in the present
+# case it is easier to write something like:
+#
+#    pin = '%05d' % number
+#
+# but this function might be useful if you want to try permutations of
+# alphanumeric characters
 def getPermutations(chars, length, prefix=""):
 	if length <= 1:
 		for char in chars:
