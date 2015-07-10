@@ -10,15 +10,15 @@ If asymmetric encryption (i.e. with a public and a private key scheme) is a grea
 
 The lab contains a sqlite database users2.db which contains a list of users and a 5-digit PIN number encrypted using a 2048-bit asymmetric key scheme. You are provided with the public key.
 
-The Oracle, which has the private key, will read the database and check whether the encrypted PIN (pin_cipher field) matches the plaintext PIN (pin_plain field, which is blank right now). Your job is to modify lab2.py to modify the database (or a copy), filling in the pin_plain field so that the Oracle OKs the plaintext PIN for all the users.
+The Oracle, which has the private key, will read the database and check whether the encrypted PIN (pin_cipher field) matches the plaintext PIN (pin_plain field, which is blank right now). Your job is to modify `lab2.py` to modify the database (or a copy), filling in the pin_plain field so that the Oracle OKs the plaintext PIN for all the users.
 
 **Tips**
 
 If brute-forcing the private key is unfeasible, you can easily brute-force the PIN!
 
-Implement the three types of algorithms to pass this lab:
+Implement these three algorithms to pass this lab:
 
-1. Use the [PyCrypto library](https://www.dlitz.net/software/pycrypto/api/current/) to encrypt all 10,000 PIN possibilities and store the (ciphertext -> plaintext) results in a dictionary. You can then quickly decrypt each user's PIN by performing a dictionary lookup. This is the fastest method when you have several users.
+1. Use the PyCrypto library [Crypto.PublicKey.RSA class](https://www.dlitz.net/software/pycrypto/api/current/Crypto.PublicKey.RSA-module.html) to encrypt all 10,000 PIN possibilities and store the (ciphertext -> plaintext) results in a dictionary (`lab2.py` contains the public key). You can then quickly decrypt each user's PIN by performing a dictionary lookup. This is the fastest method when you have several users.
 2. Brute-force each record independantly. This is slower but works even if the encrypted data is salted(*) - as long as you know how the salt is applied
 3. Brute-force the first record, determine the value for pin_plain and then copy the pin_cipher and pin_plain to all the other records. Some might consider this as cheating, but this method might work in some circumstances.
 
