@@ -1,9 +1,6 @@
 # Lab 2: Public key encryption of small plaintext is NOT secure
 
-Python library required:
-
-- [PyCrypto](https://www.dlitz.net/software/pycrypto/)
-- []
+Python library required: [PyCrypto](https://www.dlitz.net/software/pycrypto/)
 
 One of the recommentations of the [OWASP top 10 most critical web application security risks](http://owasptop10.googlecode.com/files/OWASP%20Top%2010%20-%202013.pdf) (A6 - Sensitive Data Exposure) is to encrypt sensitive data such as credit card number with a public key, and only provide backend application with the private key. As a result, if the website gets compromised, attackers cannot decrypt that sensitive data - only backend applications can.
 
