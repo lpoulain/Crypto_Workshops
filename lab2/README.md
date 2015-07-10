@@ -18,7 +18,7 @@ If brute-forcing the private key is unfeasible, you can easily brute-force the P
 
 Implement these three algorithms to pass this lab:
 
-1. Use the PyCrypto library [Crypto.PublicKey.RSA class](https://www.dlitz.net/software/pycrypto/api/current/Crypto.PublicKey.RSA-module.html) to encrypt all 10,000 PIN possibilities and store the (ciphertext -> plaintext) results in a dictionary (`lab2.py` contains the public key). You can then quickly decrypt each user's PIN by performing a dictionary lookup. This is the fastest method when you have several users.
+1. Use the PyCrypto library [Crypto.PublicKey.RSA class](https://www.dlitz.net/software/pycrypto/api/current/Crypto.PublicKey.RSA-module.html) to encrypt all 100,000 PIN possibilities and store the (ciphertext -> plaintext) results in a dictionary (`lab2.py` contains the public key). You can then quickly decrypt each user's PIN by performing a dictionary lookup. This is the fastest method when you have several users.
 2. Brute-force each record independantly. This is slower but works even if the encrypted data is salted(*) - as long as you know how the salt is applied
 3. Brute-force the first record, determine the value for pin_plain and then copy the pin_cipher and pin_plain to all the other records. Some might consider this as cheating, but this method might work in some circumstances.
 
